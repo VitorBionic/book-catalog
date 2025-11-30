@@ -1,22 +1,29 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from "react";
 
-function SearchBar({search, setSearch}) {
-  const inputRef = useRef(null)
+function SearchBar({ search, setSearch }) {
+  const inputRef = useRef(null);
 
   useEffect(() => {
-    inputRef.current.focus()
-  }, [])
+    inputRef.current.focus();
+  }, []);
 
   function updateSearch(event) {
-    setSearch(event.target.value)
+    setSearch(event.target.value);
   }
 
-  return(
+  return (
     <div className="input">
-      <p>Buscar: </p>
-      <input style={{ width: "400px"}} ref={inputRef} type="text" onChange={updateSearch} value={search} placeholder="Buscar..." />
+      <h3>Buscar: </h3>
+      <input
+        style={{ width: "400px", marginLeft: 12 }}
+        ref={inputRef}
+        type="text"
+        onChange={updateSearch}
+        value={search}
+        placeholder="Buscar..."
+      />
     </div>
-  )
+  );
 }
 
-export default SearchBar
+export default SearchBar;

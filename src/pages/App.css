@@ -1,53 +1,141 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+} */
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Styles das Sessões principais do site */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .app.light {
-  --bg: white;
-  --text: #213547;
+  /* --bg: white; */
+  /* --text: #213547;
   --btnBg: #1a1a1a;
-  --btnText: white;
+  --btnText: white; */
+
+  --bgElements: #afa5a5;
+  --bg: #f2f2f2;
+  --textPrimary: #1a1a1a;
+  --textSecondary: #555555;
+  --btnBack: #ff6f00;
+  --btnHover: #e65c00;
+  --cardBg: #f2f2f2;
 }
 
 .app.dark {
-  --bg: #1a1a1a;
-  --text: white;
+  /* --bg: #1a1a1a; */
+  /* --text: white;
   --btnBg: white;
-  --btnText: #213547;
+  --btnText: #213547; */
+
+  --bgElements: #212121;
+  --bg: #2c2c2c;
+  --textPrimary: #ffffff;
+  --textSecondary: #b0b0b0;
+  --btnBack: #ff8f00;
+  --btnHover: #ffa726;
+  --cardBg: #333333;
 }
 
 .header {
   display: flex;
+  background-color: var(--bgElements);
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 0px 20px;
+}
+.headerLogo {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.content {
+  flex: 1;
+  background-color: var(--bg);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bgElements);
+  padding: 10px 0px;
+}
+
+/* Styles dos Elementos */
+
+.header h2 {
+  color: var(--textPrimary);
+}
+
+.footer h2,
+h3 {
+  color: var(--textPrimary);
+}
+
+.title {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: var(--bg);
-  color: var(--text);
+  color: var(--textPrimary);
 }
 
 .input {
   display: flex;
   align-items: center;
   padding: 1rem;
-  background-color: var(--bg);
-  color: var(--text);
+  background-color: var(--bgElements);
+  color: var(--textPrimary);
 }
 
 .input input {
-  margin-left: 10px;
+  /* margin-left: 10px;
+  background-color: var(--bg); */
+  background-color: var(--bg);
+  border-radius: 12px;
+  height: 24px;
+  color: var(--textPrimary);
+  padding: 4px 12px;
+  border: 1px solid #000;
 }
 
 .input-list {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0px 12px;
 }
 
 .section {
-  background-color: var(--bg);
-  color: var(--text);
+  color: var(--textPrimary);
   text-align: left;
 }
 
@@ -60,19 +148,65 @@
   display: flex;
   align-items: center;
   padding: 1rem;
-  background-color: var(--bg);
-  color: var(--text);
+  color: var(--textPrimary);
+}
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0px 12px;
 }
 
 .book-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.8rem;
+  background-color: var(--cardBg);
+  border-radius: 12px;
 }
 
 .counters p {
   margin: 5px;
+}
+
+.displayContainer {
+  width: 1000px;
+  margin: 40px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--bgElements);
+}
+
+.detailsContainer {
+  width: 500px;
+  margin: 40px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--bgElements);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  gap: 24px;
+}
+
+.detailsContainer h1,
+h2,
+h3 {
+  color: var(--textPrimary);
+}
+.detailsRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.detailsButton {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 60px;
 }
 
 button {
@@ -82,13 +216,13 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: var(--btnBg);
-  color: var(--btnText);
+  background-color: var(--btnBack);
+  color: var(--textPrimary);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: 0.25s ease;
 }
 button:hover {
-  border-color: #646cff;
+  background-color: var(--btnHover);
 }
 button:focus,
 button:focus-visible {

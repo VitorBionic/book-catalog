@@ -1,11 +1,11 @@
-function Counters({total, filtered}) {
-  return(
+function Counters({ total, filtered }) {
+  return (
     <div class="counters">
-      <p>Total: {total}</p>
-      <span style={{margin: "0 20px"}}>|</span>
-      <p>Filtrados: {filtered}</p>
+      <h3>Total: {total}</h3>
+      <span style={{ margin: "0 20px" }}>|</span>
+      <h3>Filtrados: {filtered}</h3>
     </div>
-  )
+  );
 }
 
-export default Counters
+export default Counters;

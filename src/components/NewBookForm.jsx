@@ -13,7 +13,7 @@ function NewBookForm({ onAdd }) {
     onAdd({
       title,
       author,
-      year
+      year,
     });
 
     setTitle("");
@@ -27,29 +27,32 @@ function NewBookForm({ onAdd }) {
 
       <div className="input-list">
         <div className="input">
-          <p>Título: </p>
-          <input 
+          <input
+            style={{ width: 220 }}
+            placeholder="Insira o titulo"
             type="text"
             value={title}
-            onChange={e => setTitle(e.target.value)}
+            onChange={(e) => setTitle(e.target.value)}
           />
         </div>
 
         <div className="input">
-          <p>Autor: </p>
-          <input 
+          <input
+            style={{ width: 220 }}
+            placeholder="Insira o autor"
             type="text"
             value={author}
-            onChange={e => setAuthor(e.target.value)}
+            onChange={(e) => setAuthor(e.target.value)}
           />
         </div>
 
         <div className="input">
-          <p>Ano: </p>
-          <input 
+          <input
+            style={{ width: 220 }}
+            placeholder="Insira o ano"
             type="text"
             value={year}
-            onChange={e => setYear(e.target.value)}
+            onChange={(e) => setYear(e.target.value)}
           />
         </div>
 
