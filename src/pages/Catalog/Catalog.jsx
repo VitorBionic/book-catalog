@@ -14,6 +14,7 @@ export function Catalog() {
   const [search, setSearch] = useLocalStorage("search", "");
   const lastIdRef = useRef(3);
   const { theme } = useContext(ThemeContext);
+  const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
 
@@ -29,6 +30,9 @@ export function Catalog() {
       .catch((err) => {
         console.warn("books.json not found");
       });
+    setTimeout(() => {
+      setLoading(false);
+    }, 300);
   }, []);
 
   const filteredBooks = books.filter(
@@ -62,6 +66,7 @@ export function Catalog() {
         books={filteredBooks}
         onRemove={removeBook}
         onSeeDetails={seeDetails}
+        loading={loading}
       />
       <Counters total={books.length} filtered={filteredBooks.length} />
     </div>
