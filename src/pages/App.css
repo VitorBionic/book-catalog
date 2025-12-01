@@ -31,11 +31,6 @@ body {
 }
 
 .app.light {
-  /* --bg: white; */
-  /* --text: #213547;
-  --btnBg: #1a1a1a;
-  --btnText: white; */
-
   --bgElements: #afa5a5;
   --bg: #f2f2f2;
   --textPrimary: #1a1a1a;
@@ -46,11 +41,6 @@ body {
 }
 
 .app.dark {
-  /* --bg: #1a1a1a; */
-  /* --text: white;
-  --btnBg: white;
-  --btnText: #213547; */
-
   --bgElements: #212121;
   --bg: #2c2c2c;
   --textPrimary: #ffffff;
@@ -69,11 +59,22 @@ body {
   height: 80px;
   padding: 0px 20px;
 }
+
+.headerContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start; /* ou space-between */
+  gap: 60px;
+  flex: 1; /* <-- faz ocupar todo o espaço disponível */
+}
+
 .headerLogo {
   display: flex;
   flex-direction: row;
   gap: 10px;
   align-items: center;
+  cursor: pointer;
 }
 
 .content {
@@ -92,6 +93,10 @@ body {
 /* Styles dos Elementos */
 
 .header h2 {
+  color: var(--textPrimary);
+}
+
+.content h1 {
   color: var(--textPrimary);
 }
 
@@ -227,4 +232,31 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.customNavLink {
+  padding: 8px 16px;
+  text-decoration: none;
+  background-color: var(--btnBack);
+  color: var(--textPrimary);
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.customNavLink:hover {
+  background-color: var(--btnHover);
+}
+
+.customLink {
+  text-decoration: none;
+  font-size: 18px;
+  color: var(--textPrimary);
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+}
+
+.customLink:hover {
+  color: var(--btnBack);
 }

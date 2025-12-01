@@ -14,6 +14,7 @@ export function Catalog() {
   const [search, setSearch] = useLocalStorage("search", "");
   const lastIdRef = useRef(3);
   const { theme } = useContext(ThemeContext);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -47,8 +48,9 @@ export function Catalog() {
   const removeBook = (id) => {
     setBooks(books.filter((book) => book.id !== id));
   };
+
   const seeDetails = (id) => {
-    navigate({ pathname: `/catalog/book/${id}` }, { state: { books } });
+    navigate(`/catalog/book/${id}`, { state: { books } });
   };
 
   return (
