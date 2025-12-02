@@ -1,7 +1,11 @@
 
 # 📚 *Book Catalog – Documentação do Projeto*
 
-João Praxedes, Larissa Angelote, Thamyres Beatriz e Vitor Guerra
+João Praxedes - 01710907
+Larissa Angelote - 01712747
+Thamyres Beatriz - 01594672
+Vitor Queiroz Guerra -  01718322
+Kaynan Freitas - 01702989
 
 Um projeto desenvolvido com *React + Vite*, voltado para o cadastro, listagem e visualização de livros.
 A aplicação possui uma interface simples, rápida e intuitiva, permitindo gerenciar um pequeno catálogo local usando componentes reutilizáveis e atualização dinâmica de estado.
