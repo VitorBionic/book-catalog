@@ -2,9 +2,13 @@
 # 📚 *Book Catalog – Documentação do Projeto*
 
 João Praxedes - 01710907
+
 Larissa Angelote - 01712747
+
 Thamyres Beatriz - 01594672
-Vitor Queiroz Guerra -  01718322
+
+Vitor Queiroz Guerra - 01718322
+
 Kaynan Freitas - 01702989
 
 Um projeto desenvolvido com *React + Vite*, voltado para o cadastro, listagem e visualização de livros.
