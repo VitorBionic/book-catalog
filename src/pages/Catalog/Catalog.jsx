@@ -1,19 +1,17 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import BookList from "../../components/BookList";
 import Counters from "../../components/Counters";
-import Header from "../../components/Title";
 import NewBookForm from "../../components/NewBookForm";
 import SearchBar from "../../components/SearchBar";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
-import { ThemeContext } from "../../context/ThemeContext";
 import Title from "../../components/Title";
-import { useNavigate, useNavigation } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
 export function Catalog() {
   const [books, setBooks] = useState([]);
   const [search, setSearch] = useLocalStorage("search", "");
-  const lastIdRef = useRef(3);
-  const { theme } = useContext(ThemeContext);
+  const [ lastId, setLastId ] = useLocalStorage("lastId", 3);
+  const [ savedBooks, setSavedBooks ] = useLocalStorage("savedBooks", []);
   const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
@@ -25,7 +23,7 @@ export function Catalog() {
         return response.json();
       })
       .then((data) => {
-        setBooks(data);
+        setBooks([...data, ...savedBooks]);
       })
       .catch((err) => {
         console.warn("books.json not found");
@@ -43,14 +41,17 @@ export function Catalog() {
 
   const addBook = (newBook) => {
     const book = {
-      id: ++lastIdRef.current,
+      id: lastId + 1,
       ...newBook,
     };
+    setLastId(lastId + 1)
     setBooks([...books, book]);
+    setSavedBooks([...savedBooks, book])
   };
 
   const removeBook = (id) => {
     setBooks(books.filter((book) => book.id !== id));
+    setSavedBooks(savedBooks.filter((book) => book.id !== id))
   };
 
   const seeDetails = (id) => {
