@@ -9,8 +9,6 @@ Thamyres Beatriz - 01594672
 
 Vitor Queiroz Guerra - 01718322
 
-Kaynan Freitas - 01702989
-
 Um projeto desenvolvido com *React + Vite*, voltado para o cadastro, listagem e visualização de livros.
 A aplicação possui uma interface simples, rápida e intuitiva, permitindo gerenciar um pequeno catálogo local usando componentes reutilizáveis e atualização dinâmica de estado.
 
